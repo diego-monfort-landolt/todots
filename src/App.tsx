@@ -47,7 +47,6 @@ const App = (): JSX.Element => {
         <h1>Todoo.</h1>
         <Todos onToggleCompleteTodo={handleCompleted} onRemoveTodo={handleRemove} todos={todos} />
       </div>
-
     </>
   )
 }
