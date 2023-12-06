@@ -1,23 +1,34 @@
-import { TODO_FILTER } from '../consts'
+import { FILTER_BUTTONS, TODO_FILTER } from '../consts'
+import { type FilterValue } from '../types'
 
-const FILTER_BUTTONS = {
-  [TODO_FILTER.ALL]: {
-    literal: 'Todos',
-    href: `/?filter${TODO_FILTER.ALL}`
-  },
-  [TODO_FILTER.ACTIVE]: {
-    literal: 'Activos',
-    href: `/?filter${TODO_FILTER.ACTIVE}`
-  },
-  [TODO_FILTER.COMPLETED]: {
-    literal: 'Completados',
-    href: `/?filter${TODO_FILTER.COMPLETED}`
-  }
-} as const 
+interface Props {
+  onFilterChanged: (filter: FilterValue) => void
+  filterSelected: FilterValue
+}
 
 export const Filter: React.FC<Props> = ({ filterSelected, onFilterChange }) => {
+  const handleClick = (filter: FilterValue)
   return (
    <ul className='filters'>
+    {
+      Object.entries(FILTER_BUTTONS).map(([key, { href, literal }]) => {
+        const isSelected = key === filterSelected
+        const className = isSelected ? 'selected' : ''
+
+        return (
+          <li key={key}>
+             <a className={className}
+             href={href}
+             onClick={handleClick(key)}
+        >
+         {literal}
+      </a>
+
+          </li>
+        )
+
+      })
+    }
     <li>
       <a className={'$filterSelected === \'all\' ? \'selected\' : \'\' }'}
       onClick={() => {
