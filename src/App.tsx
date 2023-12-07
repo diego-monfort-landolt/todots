@@ -21,7 +21,6 @@ const mockTodos = [
     completed: false
   }
 ]
-
 const App = (): JSX.Element => {
   const [todos, setTodos] = useState(mockTodos)
   const [filterSelected, setFilterSelected] = useState<FilterValue>(TODO_FILTER.ALL)
@@ -63,5 +62,4 @@ const App = (): JSX.Element => {
     </>
   )
 }
-
 export default App

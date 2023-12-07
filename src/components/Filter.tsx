@@ -25,12 +25,10 @@ export const Filter: React.FC<Props> = ({ filterSelected, onFilterChange }) => {
         >
          {literal}
       </a>
-
           </li>
         )
       })
     }
-
    </ul>
   )
 }
