@@ -47,7 +47,6 @@ const App = (): JSX.Element => {
   }
   const activeCount = todos.filter(todo => !todo.completed).length
   const completedCound = todos.length - activeCount
-
   return (
     <>
       <div className='todoapp'>
