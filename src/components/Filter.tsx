@@ -5,7 +5,6 @@ interface Props {
   onFilterChanged: (filter: FilterValue) => void
   filterSelected: FilterValue
 }
-
 export const Filter: React.FC<Props> = ({ filterSelected, onFilterChange }) => {
   return (
    <ul className='filters'>

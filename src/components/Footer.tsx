@@ -8,7 +8,6 @@ interface Props {
   onClearCompleted: () => void
   handleFilterChange: (filter: FilterValue) => void
 }
-
 export const Footer: React.FC<Props> = ({ activeCount = 0, completedCount = 0, filterSelected, onClearCompleted }) => {
   return (
     <footer className="footer">
